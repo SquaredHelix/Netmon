@@ -9,7 +9,7 @@ def clear_screen():
         system('clear')
 
 formatLength = 30
-timeout = 0.02
+timeout = 0.05
 
 def format_print(string):
     for st in string.split(" - "):
@@ -36,7 +36,7 @@ while True:
             continue
         response = ping(host, timeout=timeout)
         if (response):
-            buffered_terminal.append(host + " - UP" +  " - " + " Ping: " + str(int(ping(host) * 1000)) +  "ms")
+            buffered_terminal.append(host + " - UP" +  " - " + " Ping: " + str(int(response * 1000)) +  "ms")
         else:
             buffered_terminal.append(host + " - DOWN")
     file.close()
